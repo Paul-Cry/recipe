@@ -9,6 +9,7 @@ const db = require('../settings/db')
 const config = require('../config.js')
 
 
+
 setInterval(function () {
     db.query('SELECT 1');
 }, 5000);
