@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea5715d6-a171-44ec-aea2-b27c3cf5d745" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/parse/recipe_pase_site.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/8eb51ed5f61e65abc3491246d2a95b8d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/8eb51ed5f61e65abc3491246d2a95b8d.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/UsersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/UsersController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parse/recipe_pase_site.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/settings/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Progect_sport/project/dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontent-open" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -49,6 +52,9 @@
       <updated>1647357724283</updated>
       <workItem from="1647357738860" duration="3583000" />
       <workItem from="1647414175996" duration="30000" />
+      <workItem from="1649175414999" duration="600000" />
+      <workItem from="1649197809175" duration="99000" />
+      <workItem from="1649204004203" duration="1436000" />
     </task>
     <servers />
   </component>

@@ -5,7 +5,6 @@ module.exports = (app) => {
     const usersController = require('../Controller/UsersController.js')
 
 
-
 // Здесь я прописываю route и основываясь на них будут делаться запросы в базу данных
 // и возвращаться нужные данные с api
 
@@ -17,24 +16,14 @@ module.exports = (app) => {
         .route('/betting/auth/signin')
         .post(usersController.signin)
 
-
     app
         .route('/recipe')
         .get(parser.parse())
 
-    // app
-    //     .route('/api/users')
-    //     .get(passport.authenticate('jwt', { session: false }), usersController.getAllUsers)
-    //
-    // app
-    //     .route('/api/form')
-    //     .get(usersController.form)
-    //
-    // app
-    //     .route('/api/form_add')
-    //     .post(usersController.form_add)
-    // app
-    //     .route('/api/form_delete')
-    //     .post(usersController.form_delete)
+    app
+        .route('/api/test')
+        .get()
+
+
 
 }

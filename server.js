@@ -17,8 +17,6 @@ app.use(express.static('./site/'));
 require('./middleware/passport')(passport)
 
 
-
-
 routes(app)
 
 app.use(function (req, res, next) {

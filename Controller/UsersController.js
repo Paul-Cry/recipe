@@ -3,7 +3,6 @@
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-
 const response = require('../response.js')
 const db = require('../settings/db')
 const config = require('../config.js')
@@ -86,6 +85,101 @@ exports.signin = (req, res) => {
     })
 
 }
+
+
+exports.getrecipe = (req, res)=>{
+    console.log(req)
+    // testnal(req.body.ingridients)
+}
+
+
+// '" + req.body.email + "'
+let testnal = (ingridients)=>{
+    if(ingridients.length === 1){
+        // db.query(
+        //     "SELECT DISTINCT name_recipes.id,name_recipes.name FROM recipe_ingredients INNER JOIN name_recipes ON recipe_ingredients.id_name_recipe = name_recipes.id INNER JOIN ingredients ON ingredients.id = recipe_ingredients.id_name_ingredients WHERE ingredients.name = '" + ingridients[0] + "';'"
+        //     , async function(error, rows, fields) {
+        //         if(error) {
+        //             response.status(400, error, res)
+        //         } else if(typeof rows !== 'undefined' && rows.length > 0) {
+        //             const row = JSON.parse(JSON.stringify(rows))
+        //             row.map(rw => {
+        //                 response.status(302, {message: `Пользователь с таким email - ${rw.email} уже зарегстрирован!`}, res)
+        //                 return true
+        //             })
+        //         } else {
+        //             console.log('Не зарегестрирован')
+        //             const name = req.body.name
+        //             const email = req.body.email
+        //             // const secondName = req.body.second_name !== '' ? req.body.second_name : 'Не указано'
+        //             const salt = await bcrypt.genSaltSync(15)
+        //             const password = await bcrypt.hashSync(req.body.password, salt)
+        //
+        //             const sql = "INSERT INTO `betting_user`(`name`, `email`, `password`) VALUES('" + name + "', '" + email + "', '" + password + "')";
+        //             db.query(sql, (error, results) => {
+        //                 if(error) {
+        //                     response.status(400, error, res)
+        //
+        //                 } else {
+        //                     response.status(200, {message: `Регистрация прошла успешно.`, results}, res)
+        //                 }
+        //             })
+        //
+        //         }
+        //     })
+    }else{
+        // let queryIng = '';
+        // queryIng += `ingredients.name = ${ingridients[0]}`
+        // ingridients.forEach((el, i)=>{
+        //     queryIng += ` ingredients.name = ${ingridients[++i]}`
+        // })
+    }
+
+    // ingredients.name = 'Рис' OR ingredients.name= 'Молоко' OR ingredients.name= 'Соль';
+    db.query(
+        "SELECT DISTINCT name_recipes.id,name_recipes.name FROM recipe_ingredients INNER JOIN name_recipes ON recipe_ingredients.id_name_recipe = name_recipes.id INNER JOIN ingredients ON ingredients.id = recipe_ingredients.id_name_ingredients WHERE ingredients.name = 'Рис' OR ingredients.name= 'Молоко' OR ingredients.name= 'Соль';'"
+        , async function(error, rows, fields) {
+            if(error) {
+                response.status(400, error, res)
+            } else if(typeof rows !== 'undefined' && rows.length > 0) {
+                const row = JSON.parse(JSON.stringify(rows))
+                row.map(rw => {
+                    response.status(302, {message: `Пользователь с таким email - ${rw.email} уже зарегстрирован!`}, res)
+                    return true
+                })
+            } else {
+                console.log('Не зарегестрирован')
+                const name = req.body.name
+                const email = req.body.email
+                // const secondName = req.body.second_name !== '' ? req.body.second_name : 'Не указано'
+                const salt = await bcrypt.genSaltSync(15)
+                const password = await bcrypt.hashSync(req.body.password, salt)
+
+                const sql = "INSERT INTO `betting_user`(`name`, `email`, `password`) VALUES('" + name + "', '" + email + "', '" + password + "')";
+                db.query(sql, (error, results) => {
+                    if(error) {
+                        response.status(400, error, res)
+
+                    } else {
+                        response.status(200, {message: `Регистрация прошла успешно.`, results}, res)
+                    }
+                })
+
+            }
+        })
+
+
+}
+
+// SELECT DISTINCT name_recipes.id,name_recipes.name
+// FROM recipe_ingredients INNER JOIN name_recipes
+// ON recipe_ingredients.id_name_recipe = name_recipes.id
+// INNER JOIN ingredients
+// ON ingredients.id = recipe_ingredients.id_name_ingredients
+// WHERE ingredients.name = 'Рис' OR ingredients.name= 'Молоко' OR ingredients.name= 'Соль';
+
+
+
 //
 //
 // exports.sendData = (req, res)=>{
